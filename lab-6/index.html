@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Palindrome Checker - Lab 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+       
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" 
+         alt="Site Logo" 
+         class="header-logo">
+            <h1>Welcome to Palindrome Checker</h1>
+        </header>
+
+        
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        
+        <main>
+            <h2>Palindrome Checker</h2>
+            <p>Enter a word or phrase, and we will check if it is a palindrome:</p>
+            <input type="text" id="inputText" placeholder="Enter text">
+            <button id="checkBtn">Check</button>
+            <p id="result"></p>
+        </main>
+
+        
+<aside class="advertisement">
+    <a href="https://www.amazon.com/" target="_blank">
+        <img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+    </a>
+    
+</aside>
+
+
+        
+        <footer>
+            <p><strong>Addendum:</strong> This page checks if a word or phrase is a palindrome by cleaning the input and reversing it.
+                The application requests data input from a single text input box. The program first removes all non-alphanumeric characters and converts every input to lowercase before the text reversal process.
+                The processing system returns the modified text which the program uses to compare against the original cleaned input.  
+                The input qualifies as a palindrome when the two sequences match. In all other cases the input does not represent a palindrome.
+                The program shows the output dynamically on the webpage.
+                <p><strong>Challenges</strong></p>
+                <p>
+                    1. The correct treatment of spaces punctuation and uppercase letters posed an initial issue to solve.  
+                    2. Regular expressions with `.replace()` function removed the unwanted characters from the string.  
+                    3. The solution for immediate user button click response used JavaScript event listeners as a challenge solver.
+                </p>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+
+</body>
+</html>
