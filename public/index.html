@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mad Lib</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Fun Mad Lib</h1>
+  <form method="POST" action="/ITC505/lab-7/index.html">
+    <label>Noun: <input type="text" name="noun" required></label><br>
+    <label>Verb: <input type="text" name="verb" required></label><br>
+    <label>Adjective: <input type="text" name="adjective" required></label><br>
+    <label>Adverb: <input type="text" name="adverb" required></label><br>
+    <label>Plural Noun: <input type="text" name="pluralNoun" required></label><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <footer>
+    <section>
+      <h2>Addendum</h2>
+      <p>TThe purpose of his lab was to develop a mad lib form through ExpressJS. The form contained five input fields which I submitted using a POST request.</p>
+      <p>I used npm to install Express and Morgan onto my system. I established a public folder for serving HTML and CSS files as part of my project setup.</p>
+      <p>The server.js file processed both GET and POST request operations. The server generates a complete mad lib that contains user-submitted values when the form submission is processed.</p>
+      <p>I loaded the page through http://localhost:8080/ITC505/lab-7/index.html and all functions operated as intended.</p>
+      <p>The server funcionality was checked through the route do_a_random which generated random numbers.</p>
+    </section>
+    <p>Last updated: <span id="lastModified"></span></p>
+  </footer>
+  <script>
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
+</body>
+</html>
