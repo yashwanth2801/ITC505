@@ -1,0 +1,144 @@
+<html>
+<head>
+    <title>Secure Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        .required {
+            color: red;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .addendum {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .addendum h3 {
+            margin-top: 0;
+            color: #333333;
+            font-size: 18px;
+        }
+
+        .addendum p {
+            color: #555555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="registrationForm" method="POST" action="submit.php" onsubmit="return validatePassword();">
+        <h2>Register</h2>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:<span class="required"> *</span></label>
+        <input type="password" id="password" name="password" required
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+               title="Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long.">
+
+        <label for="confirmPassword">Confirm Password:<span class="required"> *</span></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <div class="error" id="passwordError"></div>
+        
+        <input type="submit" value="Register">
+    </form>
+
+    <div class="addendum">
+        <h3>Addendum</h3>
+        <p>
+            The web form implementation utilizes HTML and CSS for its development. The form requires users to enter First Name together with Last Name as well as Email ID and Password followed by a required Confirmation Password field. 
+            Password. Users must enter something in each field because all form elements have the required designation. 
+        </p>
+        <p>
+            The design features a responsive format which CSS styling helped develop into a clean structure.
+            The form content stands at the center of the page because of padding applied throughout.
+            The application uses design elements such as padding and borders together with shadows to provide improved user interface. 
+            The structure remains clean in this version by excluding JavaScript validation from its design.
+        </p>
+        <p>
+            Additional features for improvement might consist of JavaScript form validation in combination with XSS protection mechanisms
+            together with server-side security protocols that stop SQL injection attacks. 
+            Security measures on both server and client sides should exist to stop SQL injection attacks.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
