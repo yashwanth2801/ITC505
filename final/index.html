@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lights Out Game</title>
+  <style>
+        body {
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      grid-template-rows: repeat(5, 60px);
+      gap: 5px;
+      justify-content: center;
+      margin: 20px auto;
+    }
+
+    .cell {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border: 2px solid #008080;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cell.is-off {
+      background-color: #333;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .addendum {
+      text-align: left;
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #f8f8f8;
+    }
+
+    .addendum h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      color: #333;
+    }
+
+    .addendum p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      background-color: #008080;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lights Out</h1>
+  <div id="game-board"></div>
+
+  <div class="addendum">
+    <h2>Addendum</h2>
+    <p><strong>Process & Creative Choices:</strong><br>
+        I built a 5x5 dynamic grid system through JavaScript code before adding embedded CSS style elements and added a 
+        button toggle function for each grid cell. A single click operation changes each cell from black to white and vice versa. 
+        The “off” (black) state received representation through a class named “is-off”. The winning condition is satisfied when all 
+        cells turn white.</p>
+
+    <p><strong>Solvable Randomization:</strong><br>
+        The board remained solvable after using white cells along with randomized cell activations. 
+        Every simulation mirrors authentic gameplay by keeping its solvable state but creating different arrangements for each game.</p>
+
+    <p><strong>Challenges & Solutions:</strong><br>
+        The main difficulty emerged when trying to randomize the board while also avoiding unsolvable puzzle conditions. 
+        User-generated board clicks served as my solution to addressing this problem instead of using random state changes. 
+        The application required extra attention regarding debugging element behaviors with state preservation throughout the 
+        board through dataset attributes.</p>
+
+    <p><strong>Insights Gained:</strong><br>
+        Working on this project allowed me to deepen my understanding of how to manipulate the DOM along with class toggling 
+        methods and event handling in addition to UI logic development. My studies taught me to maintain game logic systems which 
+        follow user expectations and interface requirements.</p>
+  </div>
+
+  <footer>
+    <p>Last updated: 
+      <span id="lastModified"></span>
+    </p>
+  </footer>
+  <script type="text/javascript">
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
